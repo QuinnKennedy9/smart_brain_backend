@@ -26,10 +26,6 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/', (req, res)=> {
-    res.send(database.user);
-})
-
 
 app.post('/imageurl', (req, res) => {
     key.models.predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
